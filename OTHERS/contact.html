@@ -1,151 +1,95 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
+    <link rel="stylesheet" href="C:\Users\user\Desktop\style.css">
+    <title>Contact Us</title>
     <style>
-        *,
-        *:before,
-        *:after {
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin-top: 30px;
+        text-align: center;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+ border-style: none;
+    border-color: #e62100;
 
-        .form-header {
-            font-size: 18px;
-            border-bottom: 1px solid #f4f4f4;
-            padding: 10px 0;
-        }
-
-        body {
-            font-family: arial, verdana;
-            font-size: 15px;
-        }
-
-        .wrapper {
-            padding: 0 25px;
-            width: 710px;
-            border: 1px solid #666;
-            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-            border-top: 3px solid #3c8dbc;
-        }
-
-		form {
-		margin: 30px 0;
-		}
-
-        .form-label {
-            float: left;
-            width: 150px;
-        }
-
-        .form-row {
-            margin: 12px 0;
-        }
-
-        .form-field {}
-
-        input,
-        textarea,
-        select {
-            width: 500px;
-            height: 28px;
-            border: 1px solid #d2d6de;
-            padding: 2px 8px;
-        }
-
-        textarea {
-            height: 50px;
-        }
-
-        input[type=radio],
-        input[type=checkbox] {
-            width: 20px;
-            color: red;
-            height: 14px;
-        }
-
-        input[type=submit],
-        input[type=reset] {
-            width: 100px;
-            margin-right: 50px;
-			background-color: #3c8dbc;
-			border-color: #367fa9;
-			color: #ffffff;
-			cursor: pointer;
-        }
-		input[type=submit]:hover,
-        input[type=reset]:hover {
-		    background-color: #367fa9;
-        }
-
-
-        .form-field:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
+    border-width: thin;
+    font-size: 12px;
+      }
+      /* add border to form */
+      form {
+        border: 1px solid black;
+      }
     </style>
-</head>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
 
-<body>
-    <div class="wrapper">
-        <div class="form-header">CONTACT US</div>
-        <form action="" method="">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
 
-            <div class="form-row">
-                <div class="form-label">Name</div>
-                <div class="form-field">
-                    <input type="text" name="name" />
-           
-            </div>
-            <div class="form-row">
-                <div class="form-label">Phone</div>
-                <div class="form-field">
-                    <input type="number" name="phone" placeholder="Please enter a number only" /> </div>
-            </div>
-            <div class="form-row">
-                <div class="form-label">Gender</div>
-                <div class="form-field">
-                    <input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" value="female">Female</div>
-           
-            <div class="form-row">
-                <div class="form-label">Message</div>
-                <div class="form-field">
-                    <textarea name="message" rows="5" cols="50"></textarea>
-                </div>
-            </div>
-           
-                
-            <div class="form-row">
-                <div class="form-label">Date of Birth</div>
-                <div class="form-field">
-                    <input type="date" name="date" />
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-label">Website</div>
-                <div class="form-field">
-                    <input type="url" name="website" />
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-label">Upload file</div>
-                <div class="form-field">
-                    <input type="file" name="file"> </div>
-            </div>
-            <div class="form-row">
-                <div class="form-label"> &nbsp; </div>
-                <div class="form-field">
-                    <input type="reset" name="reset" />
-                    <a href="pictures/response.jpg">Submit</a>
-                </div>
-            </div>
-        </form>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+</form>
+
+      <input type="submit" value="Submit" onclick="openPopup()">
+     
+
+    <div class="popup" id="popup">
+      <img src="C:\Users\user\Desktop\tick.png">
+      <h2>Thank You!</h2>
+      <p>Your details have been successfully submitted. Thanks!</p>
+      <button type="button" onclick="closePopup()">OK</button>
     </div>
 
-</body>
+    <script>
+      let popup = document.getElementById("popup");
 
+      function openPopup() {
+        popup.classList.add("open-popup");
+      }
+      function closePopup() {
+        popup.classList.remove("open-popup");
+      }
+    </script>
+  </body>
 </html>
-
