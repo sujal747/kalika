@@ -256,39 +256,44 @@ can make my own code but it is a waste of time becasuse i am very smart and time
     </div>
 <h2>Memes</h2>
 <div class="image-row">
-  <img src="OTHERS/memes/1.jpg" alt="Image 1">
-  <img src="OTHERS/memes/2.jpg" alt="Image 2">
-  <img src="OTHERS/memes/3.jpg" alt="Image 3">
-  <img src="OTHERS/memes/4.jpg" alt="Image 4">
-  <img src="OTHERS/memes/5.jpg" alt="Image 5">
-  <img src="OTHERS/memes/6.jpg" alt="Image 6">
- <img src="OTHERS/memes/7.jpg" alt="Image 7">
-  <img src="OTHERS/memes/8.jpg" alt="Image 8">
-  <img src="OTHERS/memes/9.jpg" alt="Image 9">
-  <img src="OTHERS/memes/10.jpg" alt="Image 10">
-  <img src="OTHERS/memes/11.jpg" alt="Image 11">
- <img src="OTHERS/memes/12.jpg" alt="Image 12">
-  <img src="OTHERS/memes/13.jpg" alt="Image 13">
-  <img src="OTHERS/memes/14.jpg" alt="Image 14">
-  <img src="OTHERS/memes/15.jpg" alt="Image 15">
-  <img src="OTHERS/memes/16.jpg" alt="Image 16">
+  <a href="OTHERS/memes/1.jpg" target="_blank"><img src="OTHERS/memes/1.jpg" alt="Image 1"></a>
+  <a href="OTHERS/memes/2.jpg" target="_blank"><img src="OTHERS/memes/2.jpg" alt="Image 2"></a>
+  <a href="OTHERS/memes/3.jpg" target="_blank"><img src="OTHERS/memes/3.jpg" alt="Image 3"></a>
+  <a href="OTHERS/memes/4.jpg" target="_blank"><img src="OTHERS/memes/4.jpg" alt="Image 4"></a>
+  <a href="OTHERS/memes/5.jpg" target="_blank"><img src="OTHERS/memes/5.jpg" alt="Image 5"></a>
+  <a href="OTHERS/memes/6.jpg" target="_blank"><img src="OTHERS/memes/6.jpg" alt="Image 6"></a>
+  <a href="OTHERS/memes/7.jpg" target="_blank"><img src="OTHERS/memes/7.jpg" alt="Image 7"></a>
+  <a href="OTHERS/memes/8.jpg" target="_blank"><img src="OTHERS/memes/8.jpg" alt="Image 8"></a>
+  <a href="OTHERS/memes/9.jpg" target="_blank"><img src="OTHERS/memes/9.jpg" alt="Image 9"></a>
+  <a href="OTHERS/memes/10.jpg" target="_blank"><img src="OTHERS/memes/10.jpg" alt="Image 10"></a>
+  <a href="OTHERS/memes/11.jpg" target="_blank"><img src="OTHERS/memes/11.jpg" alt="Image 11"></a>
+  <a href="OTHERS/memes/12.jpg" target="_blank"><img src="OTHERS/memes/12.jpg" alt="Image 12"></a>
+  <a href="OTHERS/memes/13.jpg" target="_blank"><img src="OTHERS/memes/13.jpg" alt="Image 13"></a>
+  <a href="OTHERS/memes/14.jpg" target="_blank"><img src="OTHERS/memes/14.jpg" alt="Image 14"></a>
+  <a href="OTHERS/memes/15.jpg" target="_blank"><img src="OTHERS/memes/15.jpg" alt="Image 15"></a>
+  <a href="OTHERS/memes/16.jpg" target="_blank"><img src="OTHERS/memes/16.jpg" alt="Image 16"></a>
 </div>
 
 <style>
 .image-row {
-  display: flex; /* Use flexbox to align images in a row */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-behavior: smooth; /* Enable smooth scrolling */
-  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
 img {
-  flex-shrink: 0; /* Prevent images from shrinking to fit container */
-  width: 300px; /* Set the width of each image */
-  height: 400px; /* Set the height of each image */
-  object-fit: cover; /* Scale image to fill the container */
-  margin-right: 20px; /* Add some space between each image */
-  scroll-snap-align: center; /* Snap each image to the center */
+  flex-shrink: 0;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-right: 20px;
+  scroll-snap-align: center;
+  cursor: pointer; /* Change cursor on hover to indicate that the image is clickable */
+}
+
+img:hover {
+  opacity: 0.8; /* Add some transparency to the image on hover */
 }
 
 @keyframes slide {
