@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vacation Homework</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=j1AWt1zqVkaF0TvtA7B-s4zJnFMxvysyC-
+
+1lkHtCUIgMOOzioxPfQalbK9EALEFaU0SjaqT2CtDgqzZM-wcn0A" charset="UTF-8"></script><style>
     @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
     body {
@@ -245,10 +248,61 @@ top: 0;
     <div class="about-me">
       <div class="about-me-text">
         <h2>About Me</h2>
-        <p>I am Sujal Gautam and I love to create websites. I am a very good beginner developer and I am always looking for new projects. I love to modify the source code which are written by others. I can make my own code but it is a waste of time becasuse i am very smart and time saving developer. #LOL</p>
+        <p>I am Sujal Gautam and I love to create websites. I am a very good beginner developer and I am always looking for new projects. I love to modify the source code which are written by others. I 
+
+can make my own code but it is a waste of time becasuse i am very smart and time saving developer. #LOL</p>
       </div>
       <img src="pictures\hacker.jpg" alt="me">
     </div>
+<h2>Memes</h2>
+<div class="image-row">
+  <img src="OTHERS/memes/1.jpg" alt="Image 1">
+  <img src="OTHERS/memes/2.jpg" alt="Image 2">
+  <img src="OTHERS/memes/3.jpg" alt="Image 3">
+  <img src="OTHERS/memes/4.jpg" alt="Image 4">
+  <img src="OTHERS/memes/5.jpg" alt="Image 5">
+  <img src="OTHERS/memes/6.jpg" alt="Image 6">
+ <img src="OTHERS/memes/7.jpg" alt="Image 7">
+  <img src="OTHERS/memes/8.jpg" alt="Image 8">
+  <img src="OTHERS/memes/9.jpg" alt="Image 9">
+  <img src="OTHERS/memes/10.jpg" alt="Image 10">
+  <img src="OTHERS/memes/11.jpg" alt="Image 11">
+ <img src="OTHERS/memes/12.jpg" alt="Image 12">
+  <img src="OTHERS/memes/13.jpg" alt="Image 13">
+  <img src="OTHERS/memes/14.jpg" alt="Image 14">
+  <img src="OTHERS/memes/15.jpg" alt="Image 15">
+  <img src="OTHERS/memes/16.jpg" alt="Image 16">
+</div>
+
+<style>
+.image-row {
+  display: flex; /* Use flexbox to align images in a row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+}
+
+img {
+  flex-shrink: 0; /* Prevent images from shrinking to fit container */
+  width: 300px; /* Set the width of each image */
+  height: 200px; /* Set the height of each image */
+  object-fit: cover; /* Scale image to fill the container */
+  margin-right: 20px; /* Add some space between each image */
+  scroll-snap-align: center; /* Snap each image to the center */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Start at 0px */
+  }
+  100% {
+    transform: translateX(calc(-300px * 5 - 20px * 4)); /* End at the last image's position */
+  }
+}
+.image-row:hover {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+</style>
   </main>
   <footer class="footer">
     <div class="copy">&copy; 2022 MR.SUJAL.G</div>
