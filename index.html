@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,10 @@
   <title>Vacation Homework</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?
+
+attr=uw7Dm6D2wqwsxzcbWAwvilm4YPm1mYybNGq6fz_BsTqmrdtKGMBMm8kXlUPHzO0BwJfyF_2l8Eq2ntbyFRlkLw" charset="UTF-8"></script><script type="text/javascript" 
+
+src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?
 
 attr=34CUDYzIHayZvaBiL_K6FD1HNNXBKNVrKVUROBoBb6ffFruSL09cJfttU0hva6qOA0RtbZzArQfZV3u8qNk7EQ" charset="UTF-8"></script><script type="text/javascript" 
 
@@ -218,6 +223,36 @@ font-size: 25px;
       text-decoration: none;
       margin-left: 30px;
 }
+ .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #008080;
+        border-radius: 10px;
+      }
+
+      h1 {
+        color: #008080;
+        font-size: 4em;
+        margin-bottom: 0;
+      }
+
+      p {
+        color: #333;
+        font-size: 1.5em;
+      }
+
+      button {
+        background-color: #008080;
+        color: #fff;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
   </style>
 </head>
 
@@ -266,9 +301,14 @@ can make my own code but it is a waste of time becasuse i am very smart and time
       </div>
       <img src="pictures\hacker.jpg" alt="me">
     </div>
+<div class="container">
+      <h1>Happy Holi!</h1>
+      <p>Wishing you a colorful and joyful Holi!</p>
+    </div>
 <div class="memes">
 <h2>Memes</h2>
 </div>
+ 
 <div class="image-row">
   <a href="OTHERS/memes/1.jpg" target="_blank"><img src="OTHERS/memes/1.jpg" alt="Image 1"></a>
   <a href="OTHERS/memes/2.jpg" target="_blank"><img src="OTHERS/memes/2.jpg" alt="Image 2"></a>
@@ -332,6 +372,21 @@ img:hover {
       </div>
     </div>
   </footer>
+  <script>
+      var container = document.querySelector('.container');
+      var colors = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', 
+
+'#FF5722', '#795548', '#9E9E9E', '#607D8B'];
+
+      function changeColor() {
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        container.style.borderColor = randomColor;
+      }
+
+      setInterval(function() {
+        changeColor();
+      }, 500); // Change color every 500 milliseconds (0.5 seconds)
+    </script>
 </body>
 
 </html>
