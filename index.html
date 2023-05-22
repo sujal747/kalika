@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -304,6 +298,10 @@ font-size: 25px;
 	.version {
 			color: #d3d3d3;
 		}
+        #projectFiles {
+      display: block;
+      margin: 0 auto;
+        }
   </style>
 </head>
 
@@ -318,8 +316,10 @@ font-size: 25px;
  <a href="http://kalikaschoolbtl.edu.np/notices">Notice</a>
     </nav>
   </header>
+ 
 
-
+  <button onclick="showProjectFiles()">View Project Files</button>
+  <div id="projectFiles"></div>
   <main>
     <div class="intro">
       <h1>KMSSB</h1>
@@ -448,6 +448,18 @@ img:hover {
       setInterval(function() {
         changeColor();
       }, 500); // Change color every 500 milliseconds (0.5 seconds)
+function showProjectFiles() {
+  var projectDiv = document.getElementById("projectFiles");
+  var filesHTML = "";
+
+  // Modify the following code according to the structure of your project files
+  filesHTML += '<h3>Project Presentation</h3>';
+  filesHTML += '<a href="OTHERS/projects" target="_blank">Download Presentation</a>';
+
+  // Add more file links as necessary
+
+  projectDiv.innerHTML = filesHTML;
+}
     </script>
 </body>
 
