@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Game</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gameContainer {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.road {
+    width: 100vw;
+    height: 100vh;
+    background: url('https://drive.google.com/uc?id=1aVBHEfbgK1OKC9VgoC8b-Y8Hn0EsPRVP&export=view') center;
+    background-position-y: repeat;
+    background-size: 100% 100%;
+}
+
+.moveRoad {
+    animation: moveRoad 6s linear infinite;
+}
+
+@keyframes moveRoad {
+    0% {
+        background-position-y: 0rem;
+    }
+    100% {
+        background-position-y: 100rem;
+    }
+}
+
+.gameContainer .carWrapper {
+    left: 50%;
+    width: 76%;
+    bottom: 0%;
+    height: 45%;
+    overflow: hidden;
+    position: absolute;
+    transform: translate(-50%, -4%);
+}
+
+.gameContainer .car {
+    top: 50%;
+    left: 35%;
+    height: 35%;
+    position: absolute;
+    transform: rotate(90deg);
+    width: clamp(30%, 10vw, 50%);
+    background: no-repeat center;
+    background-size: contain;
+}
+
+.message {
+    top: 10%;
+    left: 50%;
+    color: #ddd252;
+    font-weight: 600;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.7rem, 8vw, 6rem);
+}
+
+.startGame {
+    left: 50%;
+    bottom: 0%;
+    z-index: 1;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0rem 5rem;
+    position: absolute;
+    border-radius: 1rem;
+    background: #ddd252;
+    border: 3px solid #ddd252;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.7rem, 8vw, 3rem);
+}
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="gameContainer">
+        <div class="message">Start Game</div>
+        <button class="startGame">Start</button>
+
+        <div class="carWrapper">
+            <div class="car"></div>
+        </div>
+
+        <div class="road"></div>
+    </div>
+</body>
+<script>
+let road = document.querySelector('.road')
+startGame = document.querySelector('.startGame')
+message = document.querySelector('.message')
+car = document.querySelector('.car')
+carWrapper = document.querySelector('.carWrapper')
+audio = new Audio('https://drive.google.com/uc?id=1tOELLh3MnHMaP15LlDIM-81-SQ5zS0lD&export=view')
+crash = new Audio('https://drive.google.com/uc?id=1tg095mYxhJP12QAGf35am773uHrYlrEB&export=view')
+
+audio.loop = true;
+audio.volume = 0.2;
+crash.volume = 0.8;
+
+let carType = localStorage.getItem('carType')
+let levelType = localStorage.getItem('levelType')
+
+if (carType == null || levelType == null) {
+    localStorage.setItem('carType', 'redCar')
+    localStorage.setItem('levelType', 'easy')
+} else {
+    car.style.backgroundImage = `url(https://drive.google.com/uc?id=1Nq7Xz4B28fA2jzzOyq9Ho0Ag1cteAZfW&export=view)`;
+}
+
+let carPosition = car.getBoundingClientRect();
+let carWrapperPosition = carWrapper.getBoundingClientRect();
+let carLeft = 35;
+
+function increment() {
+    return (carLeft++);
+}
+
+function decrement() {
+    return (carLeft--);
+}
+
+let gameOver = () => {
+    audio.pause();
+    crash.play()
+    message.style.display = 'block'
+    message.innerHTML = 'Game Over'
+    road.classList.remove('moveRoad')
+}
+
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+startGame.addEventListener('click', () => {
+    startGame.style.display = 'none'
+    message.style.display = 'none'
+    road.classList.toggle('moveRoad')
+
+    audio.play();
+
+    window.addEventListener('keydown', (e) => {
+        if (e.keyCode === 37) {
+            if (decrement() < -5) {
+                gameOver()
+            } else {
+                car.style.left = `${decrement()}%`;
+            }
+        }
+
+        if (e.keyCode === 39) {
+            if (increment() > 75) {
+                gameOver()
+            } else {
+                car.style.left = `${increment()}%`;
+            }
+        }
+    })
+})
+</script>
+</html>
